@@ -3,13 +3,14 @@ package main
 import (
 	"log"
 
+	"os"
 	"github.com/akinpelu746/hello-workflow/helloworkflow"
 	"go.temporal.io/sdk/client"
 	"go.temporal.io/sdk/worker"
 )
 
 func main() {
-	c, err := client.NewClient(client.Options{})
+	c, err := client.NewClient(client.Options{HostPort: os.Getenv("TEMPORAL_GRPC_ENDPOINT")})
 	if err != nil {
 		log.Fatalln("Unable to make client", err)
 	}
