@@ -45,7 +45,7 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${${{ steps.build-image.outputs.image }}
         with:
-          args: set image deployment/$ECR_REPOSITORY $ECR_REPOSITORY=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          args: set image deployment/temporal-app temporal-app=$IMAGE_TAG
         
       - name: verify deployment
         uses: kodermax/kubectl-aws-eks@master
