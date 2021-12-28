@@ -19,7 +19,7 @@ I tried using the aws dns loadbalancer  as CN, but the name  can be used to gene
 
 * The temporal web can be accessed via  [a4de88e42cb7d4d67a553611f6dc082d-684175084.us-west-1.elb.amazonaws.com](http://a4de88e42cb7d4d67a553611f6dc082d-684175084.us-west-1.elb.amazonaws.com:8088) 
 
-url to an cation [link](https://github.com/akinpelu746/hello-workflow/actions/runs/1630688420)
+url to a github action workflow  [link](https://github.com/akinpelu746/hello-workflow/actions/runs/1630688420)
 
 To imporve the app
 
