@@ -1,0 +1,24 @@
+---
+# Source: temporal/templates/web-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: temporal-app
+  namespace: temporal
+  labels:
+    app.kubernetes.io/name: temporal
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: 1.14.0
+    app.kubernetes.io/component: app
+    app.kubernetes.io/part-of: temporal
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: temporal
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: app

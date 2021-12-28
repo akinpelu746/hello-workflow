@@ -1,0 +1,42 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: temporal-app
+  namespace: temporal
+  labels:
+    app.kubernetes.io/name: temporal
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: 1.14.0
+    app.kubernetes.io/component: app
+    app.kubernetes.io/part-of: temporal
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: temporal
+      app.kubernetes.io/instance: RELEASE-NAME
+      app.kubernetes.io/component: app
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: temporal
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/version: 1.14.0
+        app.kubernetes.io/component: app
+        app.kubernetes.io/part-of: temporal
+    spec:
+      containers:
+        - name: temporal-app
+          image: "135099984448.dkr.ecr.us-west-1.amazonaws.com/temporal-helloword:latest"
+          imagePullPolicy: Always       
+          env:
+            - name: TEMPORAL_GRPC_ENDPOINT
+              value: "temporaltest-frontend.temporal.svc:7233"
+
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          resources:
+            {}
