@@ -3,7 +3,7 @@
 ```________________________________________________________________________
 ```
 
-* There was a bug in the original repo sent, the module package was initiated to a different  github repo which doesn't exist.
+* There was a bug in the original repo sent, the go module package was initialize to a different  github repo which doesn't exist.
 
 * To secure the  temporal ,  dns name are needed to generate certificate.
 
