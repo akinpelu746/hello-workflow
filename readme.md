@@ -16,6 +16,7 @@ I tried using the aws dns loadbalancer  as CN, but the name  can be used to gene
 * The CI/CD was implemeted using Github actions, any push to the main branch triggers the job.
 
 * It builds and push a docker image to ECR then deploys to kubernetes.
+* The app-deployment.yaml and app-service.yaml are the deploymet and service yaml for the app on kuberntes. 
 
 * The temporal web can be accessed via  [a4de88e42cb7d4d67a553611f6dc082d-684175084.us-west-1.elb.amazonaws.com](http://a4de88e42cb7d4d67a553611f6dc082d-684175084.us-west-1.elb.amazonaws.com:8088) 
 
@@ -29,6 +30,8 @@ To imporve the app
 * The temporal server can be fine tuned to determine number of pods(front end,History subsystem, Matching subsystem, Worker service) needed for for optimal performance.
 * Service Mesh can be used for traffic  managment and control
 * Monitoring and dashboard should be created.
+* We can use terraform to manage the infrastructures and Kubernetes configuration files will also be managed independently.
+
 
 
 
