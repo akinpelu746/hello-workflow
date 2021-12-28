@@ -10,15 +10,21 @@ COPY go.mod go.sum  ./
 RUN go mod download
 
 # Copy the source from the current directory to the Working Directory inside the container
-COPY *.go ./
+COPY . .
 
 # Build the Go app
 
-RUN go build -o /main .
 
+
+COPY entry-point.sh /scripts/entry-point.sh
+
+
+RUN ["chmod", "+x" ,"/scripts/entry-point.sh"]
 
 # Expose port 8080 to the outside world
 EXPOSE 8080
 
+
+
 # Command to run the executable
-CMD ["main"]
+CMD ["/scripts/entry-point.sh","go","run","./starter/main.go"]
