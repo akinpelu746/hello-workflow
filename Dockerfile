@@ -10,7 +10,11 @@ COPY go.mod go.sum  ./
 RUN go mod download
 
 # Copy the source from the current directory to the Working Directory inside the container
-COPY worker starter ./
+COPY worker  ./worker
+
+COPY starter  ./starter
+
+COPY helloworkflow  ./helloworkflow
 
 # Build the Go app
 
