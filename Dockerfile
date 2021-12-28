@@ -27,4 +27,4 @@ EXPOSE 8080
 
 
 # Command to run the executable
-CMD ["/scripts/entry-point.sh","go","run","./starter/main.go"]
+CMD ["/scripts/entry-point.sh"]
