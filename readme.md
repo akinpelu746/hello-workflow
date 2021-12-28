@@ -17,7 +17,7 @@ I tried using the aws dns loadbalancer  as CN, but the name  can be used to gene
 
 * It builds and push a docker image to ECR then deploys to kubernetes.
 
-* The temporal web can be accessed via  [a4de88e42cb7d4d67a553611f6dc082d-684175084.us-west-1.elb.amazonaws.com](a4de88e42cb7d4d67a553611f6dc082d-684175084.us-west-1.elb.amazonaws.com) 
+* The temporal web can be accessed via  [a4de88e42cb7d4d67a553611f6dc082d-684175084.us-west-1.elb.amazonaws.com](http://a4de88e42cb7d4d67a553611f6dc082d-684175084.us-west-1.elb.amazonaws.com:8088) 
 
 
 To imporve the app
