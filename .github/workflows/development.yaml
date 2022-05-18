@@ -15,13 +15,13 @@ jobs:
              echo "The branch name doesn't follow a solution branch name format"
              exit 1
            else 
-            id="test"
+            id="TEST"
             echo "::set-output name=id::$id"
            fi
       - name: create env variable
         run: |
           string="test"
-          cat ${{ secrets.$string }} >> ~/.tfvars
+          cat ${{ secrets[steps.vars.outputs.id] }} >> ~/.tfvars
             
       - name: Checkout
         uses: actions/checkout@v3
